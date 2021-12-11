@@ -58,13 +58,14 @@ const Register = () => {
       <form className="form" onSubmit={handleSubmit}>
         <div className="input_container">
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" value={name} onChange={handleChange} />
+          <input type="text" name="name" placeholder="Full Name" value={name} onChange={handleChange} />
         </div>
         <div className="input_container">
           <label htmlFor="email">Email</label>
           <input
             type="text"
             name="email"
+            placeholder="Email"
             value={email}
             onChange={handleChange}
           />
@@ -73,6 +74,7 @@ const Register = () => {
           <label htmlFor="password">Password</label>
           <input
             type="password"
+            placeholder="Password"
             name="password"
             value={password}
             onChange={handleChange}

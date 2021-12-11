@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { updateDoc, doc } from "firebase/firestore";
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -46,13 +46,14 @@ const Login = () => {
   };
   return (
     <section>
-      <h3>Login</h3>
+      <h3>Log In</h3>
       <form className="form" onSubmit={handleSubmit}>
         <div className="input_container">
           <label htmlFor="email">Email</label>
           <input
             type="text"
             name="email"
+            placeholder="Email"
             value={email}
             onChange={handleChange}
           />
@@ -62,6 +63,7 @@ const Login = () => {
           <input
             type="password"
             name="password"
+            placeholder="Password"
             value={password}
             onChange={handleChange}
           />
@@ -71,6 +73,10 @@ const Login = () => {
           <button className="btn" disabled={loading}>
             {loading ? "Logging in ..." : "Login"}
           </button>
+          {/* <button className="btn">
+            <Link to="/register">Register</Link>
+          </button> */}
+          
         </div>
       </form>
     </section>
